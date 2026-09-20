@@ -61,7 +61,7 @@ target("MusicQueueFixReproduction", function()
             file_id = "7998912",
             category = "miscellaneous",
             display_name = "Whiterun Music Reload Reproduction",
-            description = "Two saves and instructions for reproducing the Whiterun battle music bug on Steam AE 1.7.104. Extract to your save folder.",
+            description = "Two saves and instructions for reproducing the Whiterun battle music bug on Steam AE 1.7.104.",
         },
     })
     add_installfiles("$(projectdir)/assets/misc/reproduction/(**)")
