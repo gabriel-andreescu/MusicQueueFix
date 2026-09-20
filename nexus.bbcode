@@ -1,0 +1,48 @@
+[size=4][color=#00ffff]OVERVIEW[/color][/size]
+Fixes an engine bug that can leave music playing after loading a save, including when the game reloads after you die.
+
+
+[size=4][color=#00ffff]WHAT GOES WRONG?[/color][/size]
+Quests and mods can request the same music more than once. When you load a save, Skyrim should clear the old requests before restoring the saved ones. A bug in that cleanup can leave extra copies in the music queue, so music from the game you just left keeps playing in the one you loaded.
+
+Reloading a save with repeated music requests can also add more copies to the playback queue each time you load it. The requests stored in the save stay the same, but the extra playback entries keep accumulating until you quit the game.
+
+Music Queue Fix corrects that cleanup for repeated music requests, regardless of which quest or mod made them. This includes combat music and other scripted music.
+
+
+[size=4][color=#00ffff]REQUIREMENTS[/color][/size]
+Skyrim SE 1.5.97, Steam AE 1.6.1170 or 1.7.104, GOG AE 1.6.1179, or Skyrim VR 1.4.15.
+[url=https://skse.silverlock.org/]SKSE[/url] for your Skyrim version.
+
+SE/AE
+[url=https://www.nexusmods.com/skyrimspecialedition/mods/32444]Address Library for SKSE Plugins[/url]
+
+VR
+[url=https://www.nexusmods.com/skyrimspecialedition/mods/58101]Address Library for SKSEVR[/url]
+
+
+[size=4][color=#00ffff]COMPATIBILITY[/color][/size]
+Compatible with [url=https://www.nexusmods.com/skyrimspecialedition/mods/17230]SSE Engine Fixes[/url] and [url=https://www.nexusmods.com/skyrimspecialedition/mods/62089]Engine Fixes VR[/url], including their music-overlap fix.
+
+Fully compatible with [url=https://www.nexusmods.com/skyrimspecialedition/mods/110459]Combat Music Fix NG[/url]. You can use both together.
+
+
+[size=4][color=#00ffff]TRY IT YOURSELF[/color][/size]
+The Battle for Whiterun is one vanilla example: its quest requests the same battle music twice. I've included two test saves and reproduction steps in the Files tab so you can see the bug for yourself. Load the Whiterun battle save, then load the earlier save without restarting Skyrim. Without the fix, the battle music follows you into the earlier save.
+
+The included instructions explain how the saves were made using the vanilla Civil War test setup.
+
+
+[size=4][color=#00ffff]WHAT ABOUT COMBAT MUSIC FIX NG?[/color][/size]
+I'm keeping [url=https://www.nexusmods.com/skyrimspecialedition/mods/110459]Combat Music Fix NG[/url] available as a more general recovery workaround for stuck combat music. It can still help with causes that Music Queue Fix doesn't address.
+
+
+[size=4][color=#00ffff]SOURCE[/color][/size]
+[url=https://github.com/gabriel-andreescu/MusicQueueFix]github.com/gabriel-andreescu/MusicQueueFix[/url]
+
+
+[size=4][color=#00ffff]CREDITS[/color][/size]
+[list]
+[*][url=https://github.com/alandtse/CommonLibSSE-NG]CommonLibSSE-NG[/url][/*]
+[*][url=https://github.com/alandtse/devbench]DevBench[/url][/*]
+[/list]
