@@ -1,4 +1,4 @@
-# In-game tests
+# Game tests
 
 Pytest checks Whiterun's two scripted music requests, repeated loads of the
 battle save, and their removal when loading the earlier QASmoke save through

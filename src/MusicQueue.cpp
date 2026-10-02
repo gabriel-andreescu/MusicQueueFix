@@ -31,11 +31,9 @@ struct ProcessEventHook {
         const auto* music = a_event->musicType;
         if (IsRemoval(*a_event) && music != nullptr) {
             const RE::BSSpinLockGuard guard(MusicQueueFix::MusicQueue::GetLock());
-            if (a_manager->current
-                == music
+            if (a_manager->current == music
                 && music->flags.all(RE::BSIMusicType::MST::kRemovalQueued)
-                && std::ranges::count(a_manager->musicQueue, music)
-                > 1) {
+                && std::ranges::count(a_manager->musicQueue, music) > 1) {
                 RemoveOneQueueEntry(a_manager->musicQueue, *a_event);
             }
             // ProcessEvent uses this recursive lock, so forwarding while held keeps the removal atomic.
