@@ -3,7 +3,7 @@ Fixes an engine bug that can leave music playing after loading a save, including
 
 
 [size=4][color=#00ffff]WHAT GOES WRONG?[/color][/size]
-Quests and mods can request the same music more than once. When you load a save, Skyrim should clear the old requests before restoring the saved ones. A bug in that cleanup can leave extra copies in the music queue, so music from the game you just left keeps playing in the one you loaded.
+Quests and mods can request the same music more than once. When you load a save, Skyrim should clear the old requests before restoring the saved ones. A bug in that cleanup can leave extra copies in the music queue, so the music that was playing before you loaded the save can keep playing afterward, even when it shouldn't.
 
 Reloading a save with repeated music requests can also add more copies to the playback queue each time you load it. The requests stored in the save stay the same, but the extra playback entries keep accumulating until you quit the game.
 
